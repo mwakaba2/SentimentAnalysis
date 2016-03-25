@@ -1,32 +1,49 @@
-import plotly.plotly as py
+import plotly
 import plotly.graph_objs as go
 
 
-# trace0 = go.Bar(
-#     x=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
-#        'Nov', 'Dec'],
-#     y=[20, 14, 25, 16, 18, 22, 19, 15, 12, 16, 14, 17],
-#     name='Primary Product',
-#     marker=dict(
-#         color='rgb(49,130,189)'
-#     )
-# )
-# trace1 = go.Bar(
-#     x=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
-#        'Nov', 'Dec'],
-#     y=[19, 14, 22, 14, 16, 19, 15, 14, 10, 12, 12, 16],
-#     name='Secondary Product',
-#     marker=dict(
-#         color='rgb(204,204,204)',
-#     )
-# )
-# data = [trace0, trace1]
-# layout = go.Layout(
-#     xaxis=dict(
-#         # set x-axis' labels direction at 45 degree angle
-#         tickangle=-45,
-#     ),
-#     barmode='group',
-# )
-# fig = go.Figure(data=data, layout=layout)
-# plot_url = py.plot(fig, filename='angled-text-bar')
+def visualize(x_coords, y1_coords, y2_coords):
+
+	pos = go.Bar(
+	    x=x_coords,
+	    y=y1_coords,
+	    name='Positive Score',
+	    marker=dict(
+	        color='rgb(255,111,111)'
+	    )
+	)
+	neg = go.Bar(
+	    x=x_coords,
+	    y=y2_coords,
+	    name='Negative Score',
+	    marker=dict(
+	        color='rgb(0,133,255)',
+	    )
+	)
+
+	data = [pos, neg]
+	layout = go.Layout(
+		title='Monthy Facebook Comments Sentiment Analysis',
+	    xaxis=dict(
+	        # set x-axis' labels direction at 45 degree angle
+	        tickangle=-45,
+	    ),
+	    barmode='group',
+	)
+
+	fig = go.Figure(data=data, layout=layout)
+	plot_url = plotly.offline.plot(fig, filename="monthly_barchart")
+
+
+
+if __name__ == '__main__':
+	m_x = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+	m_y1 = [5]*12
+	m_y2 = [5]*12
+
+	y_x = [2013, 2014, 2015, 2016]
+	y_y1 = [5]*12
+	y_y2 = [5]*12
+	
+	visualize(m_x, m_y1, m_y2)
+	# visualize(y_x, y_y1, y_y2)
