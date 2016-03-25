@@ -23,7 +23,7 @@ def visualize(x_coords, y1_coords, y2_coords, file_name):
 
 	data = [pos, neg]
 	layout = go.Layout(
-		title='Monthy Facebook Comments Sentiment Analysis',
+		title='Yearly Facebook Comments Sentiment Analysis',
 	    xaxis=dict(
 	        # set x-axis' labels direction at 45 degree angle
 	        tickangle=-45,
