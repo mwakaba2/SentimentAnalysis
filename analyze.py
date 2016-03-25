@@ -48,8 +48,8 @@ def analyze(type):
 		else:
 			avg_yearly_pos = [ p / c for p, c in zip(yearly_pos, yearly_count)]
 			avg_yearly_neg = [ n / c for n, c in zip(yearly_neg, yearly_count)]
-			print(avg_monthly_pos)
-			print(avg_monthly_neg)
+			print(avg_yearly_pos)
+			print(avg_yearly_neg)
 		
 if __name__ == '__main__':
 	# analyze("monthly")
