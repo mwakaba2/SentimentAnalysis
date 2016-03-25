@@ -40,7 +40,7 @@ def analyze(type):
 				yearly_count[year]+=1
 			
 			
-		if type="monthly":
+		if type=="monthly":
 			avg_monthly_pos = [ p / c for p, c in zip(monthly_pos, monthly_count)]
 			avg_monthly_neg = [ n / c for n, c in zip(monthly_neg, monthly_count)]	
 			print(avg_monthly_pos)
